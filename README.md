@@ -34,8 +34,9 @@ klicken, um die bereinigte Datei zu speichern.
 
 Die Eingabe muss eine CSV-Datei sein, bei der Textfelder durch
 Anführungszeichen qualifiziert sind. Das bedeutet, dass alle Textfelder,
-die Kommas oder Zeilenumbrüche enthalten, in Anführungszeichen (")
-eingeschlossen sein müssen.
+die Kommas oder Zeilenumbrüche enthalten, in Anführungszeichen
+eingeschlossen sein müssen ("Lorem Ipsum"). Als Trennzeichen wurde mit
+Semikolons (;) und Kommas (,) getestet.
 
 ------------------------------------------------------------------------
 
@@ -71,4 +72,5 @@ cleaned file.
 
 The input must be a CSV file where text fields are qualified by quotes.
 This means that any text fields containing commas or line breaks must be
-enclosed in quotes (").
+enclosed in quotes ("Lorem Ipsum"). Semicolons (;) and commas (,) were 
+tested as separators.
