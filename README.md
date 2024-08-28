@@ -18,7 +18,7 @@ Benutzer gespeichert werden kann.
     Befehl:
 
 ``` \"language-bash\"
-pip install tkinter chardet
+pip install chardet
 ```
 
 ### Verwendung
@@ -56,7 +56,7 @@ cleaned data, which can then be saved by the user.
 3.  Install the required Python libraries using the following command:
 
 ``` \"language-bash\"
-pip install tkinter chardet
+pip install chardet
 ```
 
 ### Usage
