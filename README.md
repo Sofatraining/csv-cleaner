@@ -28,7 +28,9 @@ eine CSV-Datei auszuwählen. Das Programm erkennt automatisch die
 Codierung der Datei und beginnt mit der Bereinigung der Zeilenumbrüche.
 Der Fortschritt wird in einem Fortschrittsbalken angezeigt. Sobald die
 Bereinigung abgeschlossen ist, können Sie auf "Datei abspeichern"
-klicken, um die bereinigte Datei zu speichern.
+klicken, um die bereinigte Datei zu speichern. Der Dateinname wird 
+beim Speicerhn wieder verwendet und ein '_BEREINIGT' wird vor der 
+Dateiendung eingefügt.
 
 ### Anforderungen an die Eingabedatei
 
@@ -66,7 +68,8 @@ Start the program and click on "Select CSV file" to select a CSV file.
 The program automatically detects the encoding of the file and starts
 cleaning the line breaks. The progress is displayed in a progress bar.
 Once the cleaning is complete, you can click on "Save File" to save the
-cleaned file.
+cleaned file. The file name is used again when saving and a '_BEREINIGT' 
+is inserted before the file extension.
 
 ### Input File Requirements
 
