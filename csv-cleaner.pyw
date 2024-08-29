@@ -53,8 +53,8 @@ def start_conversion(input_file, encoding, progress_var, progress_bar, save_butt
     progress_var.set(100)  # Fortschrittsbalken auf 100% setzen
     root.update_idletasks()
     
-    # Speichern-Button sichtbar machen und mit dem temporären Dateipfad verbinden
-    save_button.config(command=lambda: save_cleaned_file(button_select, progress_bar, save_button, temp_file_path))
+    # Speichern-Button sichtbar machen und mit dem temporären Dateipfad und Original-Dateinamen verbinden
+    save_button.config(command=lambda: save_cleaned_file(button_select, progress_bar, save_button, temp_file_path, input_file))
     save_button.pack(pady=10)
 
 def select_file(button_select, progress_var, progress_bar, save_button):
@@ -68,8 +68,15 @@ def select_file(button_select, progress_var, progress_bar, save_button):
         # Starte die Verarbeitung in einem separaten Thread
         threading.Thread(target=start_conversion, args=(file_path, encoding, progress_var, progress_bar, save_button)).start()
 
-def save_cleaned_file(button_select, progress_bar, save_button, temp_file_path):
-    output_file = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv")])
+def save_cleaned_file(button_select, progress_bar, save_button, temp_file_path, original_file_path):
+    # Extrahiere den Dateinamen und die Erweiterung
+    original_dir, original_name = os.path.split(original_file_path)
+    name, ext = os.path.splitext(original_name)
+    
+    # Erstelle den neuen Dateinamen mit der Kennzeichnung "_BEREINIGT"
+    suggested_name = f"{name}_BEREINIGT{ext}"
+    output_file = filedialog.asksaveasfilename(initialdir=original_dir, initialfile=suggested_name, defaultextension=".csv", filetypes=[("CSV files", "*.csv")])
+    
     if output_file:
         try:
             # Lösche die vorhandene Datei, falls sie existiert, um sie zu überschreiben
